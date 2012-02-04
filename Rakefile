@@ -42,7 +42,7 @@ end
 
 def download_vim_bundles
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle"))
-    Dir.mkdir(ENV['HOME'] + "/.vim/bundle"))
+    Dir.mkdir(ENV['HOME'] + "/.vim/bundle")
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-fugitive"))
     system "git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive"
