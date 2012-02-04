@@ -50,6 +50,9 @@ def download_vim_bundles
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-colors-solarized"))
     system "git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized"
   end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-markdown"))
+    system "git clone git://github.com/tpope/vim-markdown.git ~/.vim/bundle/vim-markdown"
+  end
 end
 
 def replace_file(file)
