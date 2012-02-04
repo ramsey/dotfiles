@@ -62,3 +62,4 @@ elif [[ "$OS" == 'Darwin' ]]; then
     eval `gdircolors ~/.dir_colors`
 fi
 
+[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
