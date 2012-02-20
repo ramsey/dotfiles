@@ -2,29 +2,7 @@
 alias ..='cd ..'
 
 # ls
-if [[ "$OS" == 'Linux' ]]; then
-    alias ls="ls -F --color=auto"
-    alias l="ls -lAhF --color=auto"
-    alias ll="ls -lhF --color=auto"
-    alias la="ls -AF --color=auto"
-elif [[ "$OS" == 'Darwin' ]]; then
-    alias ls="gls -F --color=auto"
-    alias l="gls -lAhF --color=auto"
-    alias ll="gls -lhF --color=auto"
-    alias la="gls -AF --color=auto"
-fi
-
-# git
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff'
-alias gc='git commit'
-alias gca='git commit -a'
-alias gco='git checkout'
-alias gb='git branch'
-alias gs='git status'
-alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
-alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
-
-# commands starting with % for pasting from web
-alias %=' '
+alias ls="ls -F --color=auto"
+alias l="ls -lAhF --color=auto"
+alias ll="ls -lhF --color=auto"
+alias la="ls -AF --color=auto"

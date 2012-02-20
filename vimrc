@@ -99,4 +99,4 @@ fixdel
 
 " Highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
+autocmd BufWinEnter * match WhitespaceEOL /\s\+$/

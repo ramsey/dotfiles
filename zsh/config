@@ -7,7 +7,6 @@ fi
 export EDITOR='vim'
 export PATH="$HOME/bin:$HOME/.bin:$HOME/.rvm/bin:/usr/local/bin:/usr/local/sbin:/opt/aws/bin:$PATH"
 export MANPATH="/usr/local/man:$MANPATH"
-export OS=$(uname)
 
 ZSH=$HOME/.oh-my-zsh
 
@@ -47,19 +46,15 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+bindkey '^?' backward-delete-char
 
 
 # Load oh-my-zsh plugins
-plugins=(git)
+plugins=(git gnu-utils)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/themes/ramsey.zsh-theme
 
-if [[ "$OS" == 'Linux' ]]; then
-    eval `dircolors ~/.dir_colors`
-elif [[ "$OS" == 'Darwin' ]]; then
-    eval `gdircolors ~/.dir_colors`
-fi
+eval `dircolors ~/.dir_colors`
 
-[[ -s "~/.rvm/scripts/rvm" ]] && source "~/.rvm/scripts/rvm"
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
