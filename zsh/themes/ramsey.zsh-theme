@@ -41,7 +41,7 @@ function check_git_prompt_info() {
     prompt_info=""
     if git rev-parse --git-dir > /dev/null 2>&1; then
         prompt_info="$prompt_info("
-        prompt_info="$prompt_info$(git_time_since_commit)|"
+        #prompt_info="$prompt_info$(git_time_since_commit)|"
         if [[ -z $(git_prompt_info) ]]; then
             prompt_info="$prompt_info%{$fg[magenta]%}detached-head%{$reset_color%}"
         else
