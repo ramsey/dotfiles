@@ -44,7 +44,7 @@ bindkey '^?' backward-delete-char
 
 
 # Load oh-my-zsh plugins
-plugins=(git gnu-utils vi-mode)
+plugins=(git gnu-utils)
 
 source $ZSH/oh-my-zsh.sh
 source ~/.zsh/themes/ramsey.zsh-theme
