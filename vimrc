@@ -100,3 +100,92 @@ fixdel
 " Highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=red guibg=red
 autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
+
+
+"------------------------------------------------------------------------------
+" buftabs.vim Configuration
+"------------------------------------------------------------------------------
+
+  " Only print the filename of each buffer
+    :let g:buftabs_only_basename=1
+
+  " Show the buftabs in the statusline
+  "  :let g:buftabs_in_statusline=1
+
+  " Highlight the active buffer name in the buftab
+  "  :let g:buftabs_active_highlight_group="Visual"
+
+
+"------------------------------------------------------------------------------
+" KEY MAPPINGS
+"------------------------------------------------------------------------------
+
+  " Various shortcuts for working with tabs
+    map ,t :tabnew
+    map ,d :tabprev<CR>
+    map ,f :tabnext<CR>
+
+  " Shortcuts for working with buffers
+    map ,bn :bnext<CR>
+    map ,bp :bprev<CR>
+    map ,bd :bdelete
+    map ,bl :buffers<CR>
+    map ,b :buffer
+
+  " NERD Tree
+    map ,<TAB>r :NERDTreeMirror<CR>
+    map ,<TAB>e :NERDTreeToggle<CR>
+
+  " Toggle line numbers
+    map ,# :set nu<CR>
+    map ,## :set nonu<CR>
+
+  " Toggle line wrapping
+    map ,w :set wrap<CR>
+    map ,ww :set nowrap<CR>
+
+  " Toggle paste
+    map ,pa :set paste<CR>
+    map ,npa :set nopaste<CR>
+
+  " New a new line? BR below...
+    map brb o<ESC>k
+
+  " New line above...
+    map bra O<ESC>j
+
+  " Search and replace
+    map ,sr :%s/
+
+  " g + direction for window split change. This beats the hell out of CTRL + W + direction
+    map g <C-w>
+
+  " Ensure gg still takes me to the top
+    map gg :1<CR>
+
+  " Cleanly close buffers
+    map fc <Esc>:call CleanClose(1)
+    map fq <Esc>:call CleanClose(0)
+
+
+"------------------------------------------------------------------------------
+" CUSTOM FUNCTIONS
+"------------------------------------------------------------------------------
+
+function! CleanClose(tosave)
+    if (a:tosave == 1)
+        w!
+    endif
+    let todelbufNr = bufnr("%")
+    let newbufNr = bufnr("#")
+    if ((newbufNr != -1) && (newbufNr != todelbufNr) && buflisted(newbufNr))
+        exe "b".newbufNr
+    else
+        bnext
+    endif
+
+    if (bufnr("%") == todelbufNr)
+        new
+    endif
+    exe "bd".todelbufNr
+endfunction
