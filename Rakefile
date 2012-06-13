@@ -53,6 +53,9 @@ def download_vim_bundles
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-markdown"))
     system "git clone git://github.com/tpope/vim-markdown.git ~/.vim/bundle/vim-markdown"
   end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/nerdtree"))
+    system "git clone git://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree"
+  end
 end
 
 def replace_file(file)
