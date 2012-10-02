@@ -7,5 +7,3 @@ alias l="ls -lAhF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias la="ls -AF --color=auto"
 
-# update the system time with an NTP server
-alias updatetime="sudo ntpdate time.apple.com"
