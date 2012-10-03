@@ -1,6 +1,9 @@
 export EDITOR="vim"
 export MANPATH="/usr/local/man:$MANPATH"
 
+# Ensure /usr/local/bin takes precedence over /usr/bin and /bin
+export PATH="/usr/local/bin:$PATH"
+
 # Add paths for homebrew
 if (( $+commands[brew] )) ; then
     # If python was installed with homebrew
