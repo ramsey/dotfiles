@@ -7,7 +7,7 @@ Install dependencies (I use this on Ubuntu; your command may differ):
 
 Get the source:
 
-`git clone git@github.com:ramsey/dotfiles.git .dotfiles`
+`git clone git://github.com/ramsey/dotfiles.git .dotfiles`
 
 Install the dotfiles:
 
