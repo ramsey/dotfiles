@@ -6,4 +6,5 @@ alias ls="ls -F --color=auto"
 alias l="ls -lAhF --color=auto"
 alias ll="ls -lhF --color=auto"
 alias la="ls -AF --color=auto"
+alias lld="ls -lhF --color=auto --group-directories-first"
 
