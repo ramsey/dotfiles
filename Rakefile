@@ -39,15 +39,6 @@ def download_omz
   if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh"))
     system "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
   end
-  if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh/themes/powerline.zsh-theme"))
-    uri = URI.parse "https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme"
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-    res = http.get(uri.request_uri)
-    open(ENV['HOME'] + "/.oh-my-zsh/themes/powerline.zsh-theme", "wb") do |file|
-      file.write(res.body)
-    end
-  end
 end
 
 def download_vim_bundles
