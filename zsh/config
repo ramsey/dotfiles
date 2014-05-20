@@ -12,6 +12,15 @@ fi
 
 export PATH="$HOME/bin:$HOME/.bin:$PATH"
 
+# Python environment
+export PY_USER_BASE=`python -m site --user-base`
+export PY_USER_SITE_PACKAGES=`python -m site --user-site`
+
+# Add local Python bins to the PATH
+if [[ -d "$PY_USER_BASE/bin" ]] ; then
+    export PATH="$PY_USER_BASE/bin:$PATH"
+fi
+
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="steeef"
 
@@ -54,4 +63,9 @@ plugins=(git gnu-utils brew)
 source $ZSH/oh-my-zsh.sh
 
 eval `dircolors ~/.dir_colors`
+
+# Setup for Powerline
+if [[ -x `which powerline` ]] ; then
+    . "$PY_USER_SITE_PACKAGES/powerline/bindings/zsh/powerline.zsh"
+fi
 
