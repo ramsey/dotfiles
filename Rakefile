@@ -1,5 +1,6 @@
 require 'rake'
 require 'erb'
+require 'net/http'
 
 desc "install the dot files into user's home directory"
 task :install do
@@ -37,6 +38,16 @@ end
 def download_omz
   if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh"))
     system "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+  end
+  if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh/themes/powerline.zsh-theme"))
+    uri = URI('https://raw.githubusercontent.com/jeremyFreeAgent/oh-my-zsh-powerline-theme/master/powerline.zsh-theme')
+    Net::HTTP.start(uri.host, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+      request = Net::HTTP::Get.new uri
+      response = http.request request
+      open(ENV['HOME'] + "/.oh-my-zsh/themes/powerline.zsh-theme", "wb") do |file|
+          file.write(response.body)
+      end
+    end
   end
 end
 

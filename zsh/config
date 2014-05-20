@@ -63,9 +63,3 @@ plugins=(git gnu-utils brew)
 source $ZSH/oh-my-zsh.sh
 
 eval `dircolors ~/.dir_colors`
-
-# Setup for Powerline
-if [[ -x `which powerline` ]] ; then
-    . "$PY_USER_SITE_PACKAGES/powerline/bindings/zsh/powerline.zsh"
-fi
-
