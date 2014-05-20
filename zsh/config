@@ -4,14 +4,6 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Ensure /usr/local/bin takes precedence over /usr/bin and /bin
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Add paths for homebrew
-if (( $+commands[brew] )) ; then
-    # If python was installed with homebrew
-    if [[ "${commands[python]}" == "/usr/local/bin/python" ]] ; then
-        export PATH="/usr/local/share/python:$PATH"
-    fi
-fi
-
 # Setup for rbenv
 if [[ -d "$HOME/.rbenv/bin" ]] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
