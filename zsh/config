@@ -12,15 +12,6 @@ fi
 
 export PATH="$HOME/bin:$HOME/.bin:$PATH"
 
-# Python environment
-export PY_USER_BASE=`python -m site --user-base`
-export PY_USER_SITE_PACKAGES=`python -m site --user-site`
-
-# Add local Python bins to the PATH
-if [[ -d "$PY_USER_BASE/bin" ]] ; then
-    export PATH="$PY_USER_BASE/bin:$PATH"
-fi
-
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="steeef"
 
