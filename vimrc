@@ -26,7 +26,8 @@ set backspace=indent,eol,start
 set completeopt=menu,longest,preview
 
 " Use UTF-8 as the default buffer encoding
-set enc=utf-8
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Remember up to 100 'colon' commmands and search patterns
 set history=100
