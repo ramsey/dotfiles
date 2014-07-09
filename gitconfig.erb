@@ -11,9 +11,10 @@
 [core]
 	excludesfile = <%= ENV['HOME'] %>/.gitignore
 	editor = vim
+	autocrlf = input
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [diff]
 	algorithm = patience
 [push]
-	default = current
+	default = nothing
