@@ -11,6 +11,11 @@ if [[ -d "$HOME/.rbenv/bin" ]] ; then
 fi
 
 export PATH="$HOME/bin:$HOME/.bin:$PATH"
+unset MANPATH
+export MANPATH=$HOME/man:$HOME/.man:$(manpath)
+
+# Set up for z.sh
+[[ -f ~/.bin/z.sh ]] && . ~/.bin/z.sh
 
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="steeef"
