@@ -59,3 +59,12 @@ plugins=(git gnu-utils brew)
 source $ZSH/oh-my-zsh.sh
 
 eval `dircolors ~/.dir_colors`
+
+# Custom PROMPT including phpbrew information
+function phpbrew_info {
+    [ $PHPBREW_PHP ] && echo '('$fg[blue]`basename $PHPBREW_PHP`%{$reset_color%}') '
+}
+
+PROMPT=$'
+%{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_$(virtualenv_info)$(phpbrew_info)%{$reset_color%}
+$ '
