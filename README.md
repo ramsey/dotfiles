@@ -6,6 +6,7 @@ Install dependencies (I use this on Ubuntu; your command may differ):
 ```
 sudo aptitude install git zsh rake python-pip
 pip install git+git://github.com/Lokaltog/powerline
+pip install psutil
 ```
 
 Ensure the host system running the terminal emulator has the Meslo font installed

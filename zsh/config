@@ -14,6 +14,9 @@ export PATH="$HOME/bin:$HOME/.bin:$PATH"
 unset MANPATH
 export MANPATH=$HOME/man:$HOME/.man:$(manpath)
 
+# Powerline location
+export POWERLINE_LOCATION=`pip show powerline-status | grep "^Location" | awk '{ print $2 }'`
+
 # Set up for z.sh
 [[ -f ~/.bin/z.sh ]] && . ~/.bin/z.sh
 
