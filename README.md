@@ -4,7 +4,7 @@ ramsey's dotfiles
 Install dependencies (I use this on Ubuntu; your command may differ):
 
 ```
-sudo aptitude install git zsh rake python-pip
+sudo aptitude install git zsh rake python-pip python-dev
 pip install git+git://github.com/Lokaltog/powerline
 pip install psutil
 ```
