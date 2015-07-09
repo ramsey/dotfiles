@@ -168,6 +168,9 @@ autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
     map fc <Esc>:call CleanClose(1)
     map fq <Esc>:call CleanClose(0)
 
+  " Replace selected text without destroying your buffer
+    map r "_dP
+
 
 "------------------------------------------------------------------------------
 " CUSTOM FUNCTIONS
