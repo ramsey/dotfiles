@@ -16,6 +16,11 @@ colorscheme solarized
 " Turn off line wrapping
 set nowrap
 
+" Color column for finding column 80
+"set textwidth=80
+"set colorcolumn=+1
+"highlight ColorColumn ctermbg=grey guibg=grey
+
 " Write contents of the file, if it has been modified, on buffer exit
 set autowrite
 
