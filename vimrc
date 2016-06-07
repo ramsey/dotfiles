@@ -201,6 +201,16 @@ endfunction
 
 
 " Powerline
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
+if has('python')
+    function LoadPowerline()
+        python << EOF
+try:
+    from powerline.vim import setup as powerline_setup
+    powerline_setup()
+    del powerline_setup
+except ImportError, e:
+    pass
+EOF
+    endfunction
+    call LoadPowerline()
+endif
