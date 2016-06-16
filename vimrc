@@ -34,6 +34,9 @@ set completeopt=menu,longest,preview
 set encoding=utf-8
 set fileencoding=utf-8
 
+" Allow modelines to affect vim behavior
+set modelines=1
+
 " Remember up to 100 'colon' commmands and search patterns
 set history=100
 
