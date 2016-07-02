@@ -6,6 +6,7 @@ Install dependencies (I use this on Ubuntu; your command may differ):
 ```
 sudo apt-get update
 sudo aptitude install git zsh rake python-pip python-dev
+pip install virtualenvwrapper
 pip install git+git://github.com/Lokaltog/powerline
 pip install psutil
 ```
