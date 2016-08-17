@@ -9,6 +9,8 @@ syntax on
 filetype plugin indent on
 
 " Set the vim color theme to Soloarized
+let g:solarized_visibility="high"
+"let g:solarized_contrast="high"
 syntax enable
 set background=dark
 colorscheme solarized
@@ -20,6 +22,13 @@ set nowrap
 "set textwidth=80
 "set colorcolumn=+1
 "highlight ColorColumn ctermbg=grey guibg=grey
+
+" Hightlight the line the cursor is on
+set cursorline
+highlight CursorLineNR ctermfg=136
+
+" Start out with relativenumber on
+set relativenumber
 
 " Write contents of the file, if it has been modified, on buffer exit
 set autowrite
@@ -148,6 +157,10 @@ autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
   " Toggle line numbers
     map ,# :set nu<CR>
     map ,## :set nonu<CR>
+
+  " Toggle relative line numbers
+    map ,r# :set rnu<CR>
+    map ,r## :set nornu<CR>
 
   " Toggle line wrapping
     map ,w :set wrap<CR>
