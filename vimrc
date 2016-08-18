@@ -27,8 +27,8 @@ set nowrap
 set cursorline
 highlight CursorLineNR ctermfg=136
 
-" Start out with relativenumber on
-set relativenumber
+" Start out with number on
+set number
 
 " Write contents of the file, if it has been modified, on buffer exit
 set autowrite
@@ -162,6 +162,9 @@ autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
     map ,r# :set rnu<CR>
     map ,r## :set nornu<CR>
 
+  " Toggle between line numbers and relative line numbers
+    nnoremap <C-n> :call NumberToggle()<CR>
+
   " Toggle line wrapping
     map ,w :set wrap<CR>
     map ,ww :set nowrap<CR>
@@ -214,6 +217,16 @@ function! CleanClose(tosave)
     endif
     exe "bd".todelbufNr
 endfunction
+
+function! NumberToggle()
+    if (&relativenumber == 1)
+        set norelativenumber
+        set number
+    else
+        set nonumber
+        set relativenumber
+    endif
+endfunc
 
 
 " Powerline
