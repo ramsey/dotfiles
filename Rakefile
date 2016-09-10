@@ -37,7 +37,7 @@ end
 
 def download_omz
   if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh"))
-    system "git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
+    system "git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
   end
 end
 
@@ -46,19 +46,19 @@ def download_vim_bundles
     Dir.mkdir(ENV['HOME'] + "/.vim/bundle")
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-fugitive"))
-    system "git clone git://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive"
+    system "git clone https://github.com/tpope/vim-fugitive.git ~/.vim/bundle/vim-fugitive"
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-colors-solarized"))
-    system "git clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized"
+    system "git clone https://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized"
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-markdown"))
-    system "git clone git://github.com/tpope/vim-markdown.git ~/.vim/bundle/vim-markdown"
+    system "git clone https://github.com/tpope/vim-markdown.git ~/.vim/bundle/vim-markdown"
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/nerdtree"))
-    system "git clone git://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree"
+    system "git clone https://github.com/scrooloose/nerdtree.git ~/.vim/bundle/nerdtree"
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-surround"))
-    system "git clone git://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround"
+    system "git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround"
   end
 end
 
