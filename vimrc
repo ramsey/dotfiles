@@ -27,6 +27,10 @@ set nowrap
 set cursorline
 highlight CursorLineNR ctermfg=136
 
+" Configure editorconfig
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+"let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+
 " Start out with number on
 set number
 

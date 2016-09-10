@@ -60,6 +60,9 @@ def download_vim_bundles
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-surround"))
     system "git clone https://github.com/tpope/vim-surround.git ~/.vim/bundle/vim-surround"
   end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/editorconfig-vim"))
+    system "git clone https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim"
+  end
 end
 
 def replace_file(file)

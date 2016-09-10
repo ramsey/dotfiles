@@ -9,6 +9,7 @@ sudo aptitude install git zsh rake python-pip python-dev
 pip install virtualenvwrapper
 pip install git+git://github.com/Lokaltog/powerline
 pip install psutil
+pip install editorconfig
 ```
 
 Ensure the host system running the terminal emulator has the Meslo font installed
