@@ -7,7 +7,7 @@ task :install do
   replace_all = false
   Dir['*'].each do |file|
     next if %w[Rakefile README.md].include? file
-    
+
     if File.exist?(File.join(ENV['HOME'], ".#{file.sub('.erb', '')}"))
       if File.identical? file, File.join(ENV['HOME'], ".#{file.sub('.erb', '')}")
         puts "identical ~/.#{file.sub('.erb', '')}"
@@ -62,6 +62,9 @@ def download_vim_bundles
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/editorconfig-vim"))
     system "git clone https://github.com/editorconfig/editorconfig-vim.git ~/.vim/bundle/editorconfig-vim"
+  end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-javascript"))
+    system "git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript"
   end
 end
 
