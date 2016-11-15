@@ -4,10 +4,12 @@ export MANPATH="/usr/local/man:$MANPATH"
 # Ensure /usr/local/bin takes precedence over /usr/bin and /bin
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-# Setup for rbenv
+# Setup for rbenv when installed manually from GitHub
+rbenv_setup=0
 if [[ -d "$HOME/.rbenv/bin" ]] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
+    rbenv_setup=1
 fi
 
 export PATH="$HOME/bin:$HOME/.bin:$PATH"
@@ -25,6 +27,11 @@ ZSH_THEME="steeef"
 
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
+
+# Init rbenv, if it's not already
+if command_exists rbenv && [ "$rbenv_setup" -eq 0 ] ; then
+    eval "$(rbenv init -)"
+fi
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
