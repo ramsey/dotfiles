@@ -123,6 +123,9 @@ fixdel
 highlight WhitespaceEOL ctermbg=red guibg=red
 autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
 
+" YAML files use 2 spaces, instead of 4
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 
 "------------------------------------------------------------------------------
 " buftabs.vim Configuration
