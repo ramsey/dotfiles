@@ -17,7 +17,7 @@ unset MANPATH
 export MANPATH=$HOME/man:$HOME/.man:$(manpath)
 
 # Powerline location
-export POWERLINE_LOCATION=`pip show powerline-status | grep "^Location" | awk '{ print $2 }'`
+export POWERLINE_LOCATION=`pip show --disable-pip-version-check --no-cache-dir powerline-status | grep "^Location" | awk '{ print $2 }'`
 
 # Set up for z.sh
 [[ -f ~/.bin/z.sh ]] && . ~/.bin/z.sh
