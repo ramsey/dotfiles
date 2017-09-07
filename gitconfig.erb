@@ -1,6 +1,7 @@
 [user]
 	name = <%= print("Your Name: "); STDOUT.flush; STDIN.gets.chomp %>
 	email = <%= print("Your Email: "); STDOUT.flush; STDIN.gets.chomp %>
+	signingKey = <%= print("Your PGP Signing Key ID: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
 [color]
@@ -18,3 +19,7 @@
 	algorithm = patience
 [push]
 	default = nothing
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
