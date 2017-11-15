@@ -4,6 +4,8 @@
 	signingKey = <%= print("Your PGP Signing Key ID: "); STDOUT.flush; STDIN.gets.chomp %>
 [alias]
 	co = checkout
+	sh = show --pretty=fuller
+	cp = cherry-pick -x
 [color]
 	diff = auto
 	status = auto
