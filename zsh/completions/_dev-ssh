@@ -1,0 +1,3 @@
+#compdef dev-ssh
+
+_arguments "1: :($DEV_SSH_ENVS)"
