@@ -126,6 +126,8 @@ autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
 " YAML files use 2 spaces, instead of 4
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" .sp files should be highlighted as PHP
+autocmd BufNewFile,BufRead *.sp set syntax=php
 
 "------------------------------------------------------------------------------
 " buftabs.vim Configuration
