@@ -73,6 +73,9 @@ def download_vim_bundles
     system "make"
     Dir.chdir File.expand_path(File.dirname(__FILE__))
   end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/tabline.vim"))
+    system "git clone https://github.com/mkitt/tabline.vim.git ~/.vim/bundle/tabline.vim"
+  end
 end
 
 def replace_file(file)

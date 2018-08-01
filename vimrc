@@ -20,8 +20,8 @@ set nowrap
 
 " Color column for finding column 80
 "set textwidth=80
-"set colorcolumn=+1
-"highlight ColorColumn ctermbg=grey guibg=grey
+set colorcolumn=80,120
+highlight ColorColumn cterm=NONE
 
 " Hightlight the line the cursor is on
 set cursorline
@@ -29,7 +29,7 @@ highlight CursorLineNR ctermfg=136
 
 " Configure editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-"let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
+let g:EditorConfig_exec_path = '/usr/local/bin/editorconfig'
 
 " Start out with number on
 set number
@@ -130,18 +130,12 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.sp set syntax=php
 
 "------------------------------------------------------------------------------
-" buftabs.vim Configuration
+" tabline.vim Configuration
 "------------------------------------------------------------------------------
 
-  " Only print the filename of each buffer
-    :let g:buftabs_only_basename=1
-
-  " Show the buftabs in the statusline
-  "  :let g:buftabs_in_statusline=1
-
-  " Highlight the active buffer name in the buftab
-  "  :let g:buftabs_active_highlight_group="Visual"
-
+hi TabLine ctermfg=Black ctermbg=Green cterm=NONE
+hi TabLineFill ctermfg=Black ctermbg=Green cterm=NONE
+hi TabLineSel ctermfg=Black ctermbg=DarkGreen cterm=NONE
 
 "------------------------------------------------------------------------------
 " KEY MAPPINGS
@@ -151,6 +145,7 @@ autocmd BufNewFile,BufRead *.sp set syntax=php
     map ,t :tabnew
     map ,d :tabprev<CR>
     map ,f :tabnext<CR>
+    map ,s :tabnext
 
   " Shortcuts for working with buffers
     map ,bn :bnext<CR>
