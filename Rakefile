@@ -66,6 +66,13 @@ def download_vim_bundles
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-javascript"))
     system "git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript"
   end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/command-t"))
+    system "git clone https://github.com/wincent/command-t.git ~/.vim/bundle/command-t"
+    Dir.chdir ENV['HOME'] + "/.vim/bundle/command-t/ruby/command-t/ext/command-t"
+    system "ruby extconf.rb"
+    system "make"
+    Dir.chdir File.expand_path(File.dirname(__FILE__))
+  end
 end
 
 def replace_file(file)
