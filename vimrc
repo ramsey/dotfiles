@@ -130,6 +130,14 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.sp set syntax=php
 
 "------------------------------------------------------------------------------
+" command-t Configuration
+"------------------------------------------------------------------------------
+
+let g:CommandTFileScanner = 'find'
+let g:CommandTTraverseSCM = 'dir'
+let g:CommandTWildIgnore = &wildignore . ",*.swp,*/ci-build,*/node_modules,*/vendor"
+
+"------------------------------------------------------------------------------
 " tabline.vim Configuration
 "------------------------------------------------------------------------------
 
