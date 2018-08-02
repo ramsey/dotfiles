@@ -13,8 +13,7 @@ if [[ -d "$HOME/.rbenv/bin" ]] ; then
 fi
 
 export PATH="$HOME/bin:$HOME/.bin:$PATH"
-unset MANPATH
-export MANPATH=$HOME/man:$HOME/.man:$(manpath)
+export MANPATH="$HOME/man:$HOME/.man:$MANPATH"
 
 # Powerline location
 export POWERLINE_LOCATION=`pip show --disable-pip-version-check --no-cache-dir powerline-status | grep "^Location" | awk '{ print $2 }'`
