@@ -85,6 +85,8 @@ function ruby_info {
     fi
 }
 
+export MACHINE_NAME="${MACHINE_NAME:=%m}"
+
 PROMPT=$'
-%{$purple%}%n%{$reset_color%} at %{$orange%}%m%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_$(virtualenv_info)$(phpbrew_info)$(ruby_info)%{$reset_color%}
+%{$purple%}%n%{$reset_color%} at %{$orange%}%{$MACHINE_NAME%}%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} $vcs_info_msg_0_$(virtualenv_info)$(phpbrew_info)$(ruby_info)%{$reset_color%}
 $ '
