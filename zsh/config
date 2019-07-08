@@ -64,7 +64,7 @@ bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 
-plugins=(git gnu-utils aws virtualenvwrapper docker)
+plugins=(git gnu-utils virtualenvwrapper docker)
 source $ZSH/oh-my-zsh.sh
 
 eval `dircolors ~/.dir_colors`
