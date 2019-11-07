@@ -1,5 +1,6 @@
 export EDITOR="vim"
-export MANPATH="/usr/local/man:$MANPATH"
+export PATH="$HOME/bin:$HOME/.bin:$PATH"
+export MANPATH="$HOME/man:$HOME/.man:$MANPATH"
 
 # Setup for rbenv when installed manually from GitHub
 rbenv_setup=0
@@ -8,9 +9,6 @@ if [[ -d "$HOME/.rbenv/bin" ]] ; then
     eval "$(rbenv init -)"
     rbenv_setup=1
 fi
-
-export PATH="$HOME/bin:$HOME/.bin:$PATH"
-export MANPATH="$HOME/man:$HOME/.man:$MANPATH"
 
 # Powerline location
 export POWERLINE_LOCATION=`pip show --disable-pip-version-check --no-cache-dir powerline-status | grep "^Location" | awk '{ print $2 }'`
