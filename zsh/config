@@ -62,7 +62,28 @@ bindkey '^?' backward-delete-char
 plugins=(git gnu-utils virtualenvwrapper docker)
 source $ZSH/oh-my-zsh.sh
 
-eval `dircolors ~/.dir_colors`
+dircolors=""
+dircolors_installed=$(which dircolors &>/dev/null; echo $?)
+
+if [ $dircolors_installed -ne 0 ]; then
+    dircolors_installed=$(which gdircolors &>/dev/null; echo $?)
+    if [ $dircolors_installed -ne 0 ]; then
+        if [ -d "/usr/local/Cellar/coreutils/8.31/bin/gdircolors" ]; then
+            # This is a stopgap measure for right now. This path is
+            # too specific for forward compatibility with upgrades to the
+            # coreutils Homebrew package.
+            dircolors="/usr/local/Cellar/coreutils/8.31/bin/gdircolors"
+        fi
+    else
+        dircolors=$(which gdircolors)
+    fi
+else
+    dircolors=$(which dircolors)
+fi
+
+if [ -n "${dircolors}" ]; then
+    eval `${dircolors} ~/.dir_colors`
+fi
 
 # Custom PROMPT including phpbrew information
 function phpbrew_info {
