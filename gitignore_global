@@ -3,5 +3,7 @@
 *~
 .DS_Store
 .idea/
+.phpunit.result.cache
 CMakeLists.txt
 cmake-build-debug/
+compile_commands.json
