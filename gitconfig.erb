@@ -15,6 +15,7 @@
 	excludesfile = <%= ENV['HOME'] %>/.gitignore_global
 	editor = vim
 	autocrlf = input
+	pager = less -F -X
 [format]
 	pretty = %C(yellow)%h%Creset %s %C(red)(%an, %cr)%Creset
 [diff]
@@ -25,3 +26,5 @@
 	gpgsign = true
 [tag]
 	gpgsign = true
+[init]
+	defaultBranch = main
