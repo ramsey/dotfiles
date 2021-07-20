@@ -8,12 +8,17 @@ syntax on
 " Enable loading filetype and indentation plugins
 filetype plugin indent on
 
-" Set the vim color theme to Soloarized
-let g:solarized_visibility="high"
+" Set the vim color theme to Solarized
+"let g:solarized_visibility="high"
 "let g:solarized_contrast="high"
-syntax enable
-set background=dark
-colorscheme solarized
+"syntax enable
+"set background=dark
+"colorscheme solarized
+
+colorscheme snazzy
+
+" Turn off the bell
+set visualbell
 
 " Turn off line wrapping
 set nowrap
@@ -23,7 +28,7 @@ set nowrap
 set colorcolumn=80,120
 highlight ColorColumn cterm=NONE
 
-" Hightlight the line the cursor is on
+" Highlight the line the cursor is on
 set cursorline
 highlight CursorLineNR ctermfg=136
 
@@ -122,12 +127,6 @@ fixdel
 " Highlight trailing whitespace
 highlight WhitespaceEOL ctermbg=red guibg=red
 autocmd BufWinEnter * match WhitespaceEOL /\s\+$/
-
-" YAML files use 2 spaces, instead of 4
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-" .sp files should be highlighted as PHP
-autocmd BufNewFile,BufRead *.sp set syntax=php
 
 "------------------------------------------------------------------------------
 " command-t Configuration

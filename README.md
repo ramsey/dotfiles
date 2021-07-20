@@ -21,8 +21,7 @@ pip install psutil
 pip install editorconfig
 ```
 
-Ensure the host system running the terminal emulator has the Meslo font installed
-(for use with Powerline): https://github.com/Lokaltog/powerline-fonts
+Install a [Nerd Font](https://www.nerdfonts.com).
 
 Get the source:
 

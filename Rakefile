@@ -39,6 +39,9 @@ def download_omz
   if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh"))
     system "git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh"
   end
+  if not(File.exist?(ENV['HOME'] + "/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"))
+    system "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
+  end
 end
 
 def download_vim_bundles
@@ -65,6 +68,9 @@ def download_vim_bundles
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-javascript"))
     system "git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript"
+  end
+  if not(File.exist?(ENV['HOME'] + "/.vim/bundle/vim-snazzy"))
+    system "git clone https://github.com/connorholyday/vim-snazzy.git ~/.vim/bundle/vim-snazzy"
   end
   if not(File.exist?(ENV['HOME'] + "/.vim/bundle/command-t"))
     system "git clone https://github.com/wincent/command-t.git ~/.vim/bundle/command-t"
